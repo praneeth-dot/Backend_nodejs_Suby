@@ -1,5 +1,5 @@
 const express = require('express');
-const firmController = require('../controllers/firmcontroller');
+const firmController = require('../controllers/firmController');
 const verifyToken = require('../middlewares/verifyTokens');
 
 

@@ -41,7 +41,6 @@ const addProduct = async(req, res) => {
         firm.products.push(savedProduct);
 
 
-
         await firm.save()
 
         res.status(200).json(savedProduct)
@@ -61,10 +60,10 @@ const getProductByFirm = async(req, res) => {
             return res.status(404).json({ error: "No firm found" });
         }
 
-        const restaurantName =firm.firmName
+        const restaurantName = firm.firmName;
         const products = await Product.find({ firm: firmId });
 
-        res.status(200).json({restaurantName ,products });
+        res.status(200).json({ restaurantName, products });
     } catch (error) {
         console.error(error);
         res.status(500).json({ error: "Internal server error" })
